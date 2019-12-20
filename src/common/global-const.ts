@@ -5,4 +5,4 @@ export const GlobalConst = {
     DefaultLong: '11.5737987',
     DefaultZoom: 14,
     DefaultRadius: 1500
-}
+};
