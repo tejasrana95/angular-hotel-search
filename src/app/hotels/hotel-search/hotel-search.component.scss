@@ -1,0 +1,38 @@
+.form-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+
+    .search-form {
+        ::ng-deep div {
+            width: calc(100% - 100px);
+
+            input {
+                width: 100% !important;
+                height: 40px;
+                font-size: 20px;
+                border: 1px solid #ccc;
+                padding: 0 10px;
+            }
+
+            ng2-input-autocomplete {
+                width: 100% !important;
+            }
+
+            div.autocomplete.search-result-suggestion {
+                width: 100% !important;
+            }
+        }
+
+        input {
+            width: 100px;
+            height: 40px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+        width: 100%;
+    }
+}

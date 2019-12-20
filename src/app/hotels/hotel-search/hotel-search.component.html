@@ -1,0 +1,7 @@
+<div class="form-wrapper">
+    <form name="searchForm" (ngSubmit)="onSubmit()" [formGroup]="searchForm" novalidate class="search-form">
+        <input input-autocomplete [config]="config" placeholder="Query" formControlName="query" required
+            [items]="searchResult" (inputChangedEvent)="onSearch($event)" (selectEvent)="onSelect($event)">
+        <input type="number" placeholder="Radius" formControlName="radius" min="1" required>
+    </form>
+</div>

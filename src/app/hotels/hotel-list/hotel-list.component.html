@@ -1,0 +1,42 @@
+<app-hotel-search (selectedLatLngFromResult)="resultFromSearch($event)" (updateRadius)="updateRadius($event)">
+</app-hotel-search>
+
+
+<div class="hotel-page-wrapper" #wrapperToMeasure>
+    <div class="hotel-list" >
+        <section class="hotels-card">
+            <article class="hotel" *ngFor="let hotel of hotelList">
+                <div class="hotel-info-hover">
+                    <div class="hotel-icon">
+                        <img [src]="hotel.icon" [alt]="hotel.title" [title]="hotel.title">
+                    </div>
+                    <div class="hotel-distance">
+                        <i class="fa fa-location-arrow" aria-hidden="true"></i> {{hotel.distance}} metre
+                    </div>
+                </div>
+                <div class="hotel-img"></div>
+                <div class="">
+                    <div class="hotel-img-hover">
+                        <div class="hotel-hover-text" *ngIf="hotel.openingHours">
+                            <h3>{{hotel.openingHours.label}}</h3>
+                            <p>{{hotel.openingHours.text}}</p>
+                            <p>Currently {{(hotel.openingHours.isOpen) ? 'Open': 'Close'}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotel-info">
+                    <span class="hotel-category"></span>
+                    <h3 class="hotel-title">{{hotel.title}}</h3>
+                    <app-rating [rating]="hotel.averageRating"></app-rating>
+                    <div class="hotel-address">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span [innerHTML]="hotel.vicinity"></span>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <app-here-map #map [geoData]="{lat: lat, long:long}" [height]="innerHeight" (resultFromMap)="resultFromMap($event)" [width]="width"
+        [updateRadius]="radius">
+    </app-here-map>
+</div>

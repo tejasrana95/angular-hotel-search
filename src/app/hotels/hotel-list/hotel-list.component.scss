@@ -1,0 +1,206 @@
+.hotel-page-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    margin-top: 110px;
+
+    .hotel-list {
+        width: 48%;
+        display: inline-block;
+
+        @media screen and (max-width:1024px) {
+            width: 100%;
+            float: initial;
+            position: initial;
+        }
+    }
+
+    app-here-map {
+        width: 50%;
+        float: right;
+        position: fixed;
+        padding-top: 20px;
+
+        @media screen and (max-width:1024px) {
+            width: 100%;
+            float: initial;
+            position: initial;
+        }
+    }
+
+    @media screen and (max-width:1024px) {
+        width: 100%;
+        margin-top: 5px;
+    }
+}
+
+.hotels-card {
+    width: 100%;
+    justify-content: center;
+    -webkit-justify-content: center;
+
+    @media screen and (max-width:1024px) {
+        padding: 0 20px;
+    }
+
+    .hotel {
+        display: inline-block;
+        margin: 20px 0px;
+        height: 410px;
+        min-width: 280px;
+        margin-right: 25px;
+        transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+        background-color: #fff;
+        width: 33.3%;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+
+        @media screen and (max-width:425px) {
+            width: 100%;
+        }
+
+        @media screen and  (min-width: 426px) and (max-width:768px) {
+            width: 46%;
+        }
+
+        @media screen and (min-width: 769px) and (max-width:1024px) {
+            width: 285px;
+        }
+
+        &:hover {
+            box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+            transform: scale(1.10, 1.10);
+        }
+
+        .hotel-img,
+        .hotel-img-hover {
+            background-image: url('../../../assets/images/images.jpeg');
+        }
+
+        .hotel-img {
+            visibility: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 235px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .hotel-info-hover {
+            position: absolute;
+            padding: 16px;
+            width: 100%;
+            opacity: 1;
+            top: 0;
+
+            .hotel-icon {
+                width: 48%;
+                float: left;
+
+                img {
+                    width: 18px;
+                }
+            }
+
+            .hotel-distance {
+                font-size: 12px;
+                color: #AD7D52;
+                vertical-align: middle;
+                margin-left: 5px;
+                float: right;
+                width: 100px;
+                text-align: right;
+                padding-top: 5px;
+            }
+        }
+
+        .hotel-img-hover {
+            transition: 0.2s all ease-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: absolute;
+            height: 235px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            top: 0;
+
+        }
+    }
+
+    .hotel-hover-text {
+        display: none;
+    }
+}
+
+.hotel-info {
+    z-index: 2;
+    background-color: #fff;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    padding: 16px 24px 24px 24px;
+
+    app-rating {
+        display: block;
+    }
+
+    .hotel-address {
+        margin-top: 5px;
+
+        i {
+            &.fa {
+                padding-right: 10px;
+            }
+        }
+    }
+}
+
+.hotel-category {
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+}
+
+.hotel-title {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.hotel-by {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
+
+.hotel-author {
+    font-weight: 600;
+    text-decoration: none;
+    color: #AD7D52;
+}
+
+.hotel:hover .hotel-img-hover {
+    height: 100%;
+    opacity: 0.3;
+
+    .hotel-hover-text {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.hotel:hover .hotel-info {
+    background-color: transparent;
+    position: relative;
+}
+
+.hotel:hover .hotel-info-hover {
+    opacity: 1;
+}
